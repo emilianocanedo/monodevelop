@@ -1099,6 +1099,7 @@ namespace MonoDevelop.Debugger.Win32
 				process.OnEvalException -= exceptionHandler;
 			}
 
+			WaitUntilStopped ();
 			if (exception != null) {
 /*				ValueReference<CorValue, CorType> msg = ctx.Adapter.GetMember (ctx, val, "Message");
 				if (msg != null) {
@@ -1111,7 +1112,6 @@ namespace MonoDevelop.Debugger.Win32
 				throw new EvaluatorException ("Evaluation failed: " + ObjectAdapter.GetValueTypeName (ctx, vref));
 			}
 
-			WaitUntilStopped ();
 			return eval.Result;
 		}
 
