@@ -1111,6 +1111,7 @@ namespace MonoDevelop.Debugger.Win32
 				throw new EvaluatorException ("Evaluation failed: " + ObjectAdapter.GetValueTypeName (ctx, vref));
 			}
 
+			WaitUntilStopped ();
 			return eval.Result;
 		}
 
